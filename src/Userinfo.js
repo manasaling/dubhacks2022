@@ -7,7 +7,7 @@ function Userinfo() {
        
       <div className="form">
             
-          <form >
+          <form action="{{url_for('predict')}}" method = "post">
             <div className="input-container">
                 <div className="ind-questions">
                     <label className="label">Name</label>
@@ -96,6 +96,7 @@ function Userinfo() {
             </div>
           </form>
         </div>
+    <h4>{{prediction_text}}</h4>
     </div>
   );
 }
