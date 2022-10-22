@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pickle
 
-df = pd.read_csv("/content/drive/MyDrive/UW_SECOND_YEAR/DubHacks 22/diabetes_012_health_indicators_BRFSS2015.csv")
+df = pd.read_csv("/public/diabetes_012_health_indicators_BRFSS2015.csv")
 useDf = df.drop(['CholCheck', 'PhysActivity', 'NoDocbcCost', 'AnyHealthcare', 'MentHlth', 'Education', 'Income'], axis = 1)
 
 df = df.rename(columns={'Diabetes_012': 'DiabetesPrediction', 'DiffWalk': 'Walking'})
