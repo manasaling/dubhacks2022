@@ -7,14 +7,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pickle
 
-df = pd.read_csv("/public/diabetes_012_health_indicators_BRFSS2015.csv")
+df = pd.read_csv(r"C:\Users\manas\dubhacks2022\src\diabetes_012_health_indicators_BRFSS2015.csv")
 useDf = df.drop(['CholCheck', 'PhysActivity', 'NoDocbcCost', 'AnyHealthcare', 'MentHlth', 'Education', 'Income'], axis = 1)
 
-df = df.rename(columns={'Diabetes_012': 'DiabetesPrediction', 'DiffWalk': 'Walking'})
+useDf = useDf.rename(columns={'Diabetes_012': 'DiabetesPrediction', 'DiffWalk': 'Walking'})
 
 ClassModel = DecisionTreeClassifier()
-features = df.loc[:, df.columns != 'DiabetesPrediction']
-labels = df['DiabetesPrediction']
+features = useDf.loc[:, useDf.columns != 'DiabetesPrediction']
+labels = useDf['DiabetesPrediction']
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.10)
 ClassModel.fit(features_train, labels_train)
 
