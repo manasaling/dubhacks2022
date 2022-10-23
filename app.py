@@ -21,6 +21,7 @@ def predict():
   output = round(prediction[0], 2)
   return render_template ('Userinfo.js', prediction_text = 'Possibility for diabetes is {}'.format(output))
   
-  if __name__ == "__main__":
-    app.run()
+  
+if __name__ == "__main__":
+  app.run()
     
